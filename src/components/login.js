@@ -65,14 +65,19 @@ class Login extends React.Component {
         axios.post(`${dimiapiEndpoint}/auth`, requestBody, config)
             .then((result) => {
                 if(result.data.token !== null) {
-
                     let tokenDec = jwt.decode(result.data.token);
 
                     this.setState({login: true, dimitok: tokenDec, 
                                    number: tokenDec.identity[0].number,
                                    name : tokenDec.identity[0].name,
                                    img: tokenDec.identity[0].photo});
-                    this.props.comp.setState({number: this.state.number, token: result.data.token, login: true});
+                                   
+                    this.props.comp.setState({number: this.state.number, 
+                                              token: result.data.token, 
+                                              login: true,
+                                              dimiid : this.state.dimiid,
+                                              dimipw : this.state.dimipw
+                                            });
                 }
             })
     }

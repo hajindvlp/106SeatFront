@@ -52,6 +52,9 @@ class Seat extends React.Component {
                     let contentRaw = (<><h2>{res.data} / 35 </h2><p>35명이 모두 채워져야 보입니다...</p><h4>아직 안한사람</h4></>);
                     this.setState({content : contentRaw});
                 }
+            })
+            .catch(error => {
+                console.log(error.response)
             });
     }
 
@@ -67,6 +70,9 @@ class Seat extends React.Component {
 
                 this.setState({list : listHtml});
             })
+            .catch(error => {
+                console.log(error.response)
+            });
     }
 
     render() {

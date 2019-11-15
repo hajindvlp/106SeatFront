@@ -23,7 +23,9 @@ class Select extends React.Component {
             message : '',
             onmessage : false,
             token : '',
-            login : false
+            login : false,
+            dimiid : '',
+            dimipw : '',
         };
   
         this.handleChange = this.handleChange.bind(this);
@@ -46,7 +48,9 @@ class Select extends React.Component {
                 want1 : this.state.want1,
                 want2 : this.state.want2,
                 want3 : this.state.want3,
-                token : this.state.token
+                token : this.state.token,
+                id : this.state.dimiid,
+                pw : this.state.dimipw
             }
 
             axios.post(`${apiEndpoint}/`, qs.stringify(requestBody), config)
@@ -55,6 +59,9 @@ class Select extends React.Component {
                     else if(result.data === "changed") this.setState({message: "바뀜"});
                     else this.setState({message: "실패"});
                 })
+                .catch(error => {
+                    console.log(error.response)
+                });
         }
         event.preventDefault();
     }
