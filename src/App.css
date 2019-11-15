@@ -20,3 +20,40 @@
 .App-link {
   color: #09d3ac;
 }
+
+table {
+  margin : auto;
+  border-collapse: collapse;
+}
+
+table {
+  font-size : 30px;
+  border: 1px solid black;
+}
+
+td {
+  padding : 10px;
+}
+
+.set {
+  border-right: 1px solid black;
+}
+
+ul {
+  margin: auto;
+  width: 40%;
+  column-count: 3;
+}
+
+li {
+  
+  margin-left: 10px;
+}
+
+img {
+  width:70px;
+}
+
+footer {
+  float:bottom;
+}

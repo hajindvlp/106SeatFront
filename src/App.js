@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Select from './components/choose';
+import Seat from './components/seat';
 import './App.css';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2> <Link to="/select"> 내 자리 입력하기 </Link> </h2>
+      <h2> <Link to="/seat"> 자리 보기 </Link> </h2>
+      <Route path="/select"> <Select /> </Route>
+      <Route path="/seat"> <Seat /> </Route>
+      <footer>
+        <p>18기 정하진 제작</p>
+        <i className="fa fa-github" aria-hidden="true"></i>
+      </footer>
     </div>
+    </Router>
   );
 }
 
